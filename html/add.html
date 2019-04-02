@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>添加微博</title>
+<style type="text/css">
+    html{font-size:18px;}
+    fieldset{width:300px; margin: 0 auto;}
+    legend{font-weight:bold; font-size:15px;}
+    .label{float:left; width:80px; margin-left:10px;}
+    .left{margin-left:90px;}
+    .input{width:300px;}
+    span{color: #666666;}
+</style>
+
+<script language="JavaScript">
+
+function InputCheck(Add)
+{
+    if (Add.title.value == "")
+    {
+        alert("请输入微博类别!");
+        Add.title.focus();
+        return (false);
+    }
+    if (Add.content.value == "")
+    {
+        alert("请输入微博内容!");
+        Add.content.focus();
+        return (false);
+    }
+    if (Add.weiboName.value == "")
+    {
+        alert("请输入微博内容!");
+        Add.weiboName.focus();
+        return (false);
+    }
+    if (Add.author.value == "")
+    {
+        alert("请输入微博内容!");
+        Add.author.focus();
+        return (false);
+    }
+}
+</script>
+
+</head>
+<body>
+<div>
+<fieldset>
+<a href="login.php">返回首页</a><br/>
+</fieldset>
+</div>
+<div>
+<fieldset>
+<form name="Add" method="POST" action="add.php" onsubmit="InputCheck(this)">
+    <p>
+    <h3>微博类别</h3>
+    <select name="title" size="2">
+    <option value="体育">体育</option>
+    <option value="娱乐">娱乐</option>
+    <option value="科技">科技</option>
+    <option value="教育">教育</option>
+    <option value="时尚">时尚</option>
+    <option value="新闻">新闻</option>    
+    </select>
+    </p>
+    <hr>
+    <p>
+    <label for="author" class="label">微博作者:</label>
+    <input id="author" name="author" type="text" class="input" />
+    </p>
+    <p>
+    <label for="weiboName" class="label">微博标题:</label>
+    <input id="weiboName" name="weiboName" type="text" class="input" />
+    </p>
+    <p>
+    <h3>微博内容:</h3>
+    </p>
+    <hr>
+    <p>
+    <td><textarea name="content" rows="10" colos="100"></textarea></td>
+    </p>
+    <p>
+    <input type="submit" name="submit" value="发表微博" class="left"/> 
+    <input type="RESET" value="  重 置  " class="right"/>
+    </p>
+</form>
+</fieldset>
+</div>
+</body>
+</html>    

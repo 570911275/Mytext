@@ -1,0 +1,52 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/heml; charset=utf-8"/>
+<title>===YY微博——用户注册===</title>
+<style type="text/css">
+    html{font-size: 12px;}
+    fieldset{width:520px; margin:0 auto;}
+    legend{font-weight:bold; font-size:14px;}
+    label{float:left;width:70px;margin-left:10px;}
+    .left{margin-left:80px;}
+    .input{width:150px;}
+    span{color:palegreen;}
+</style>
+</head>
+<body>
+<table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
+   <tr>
+       <td width="73%" height="30"><a href="./">YY微博</a></td>
+       <td width="27%" align="right" valign="middle"><a href="new biao3.php"></a></td>
+   </tr>
+</table>
+<fieldest>
+        <legend>YY微博——用户注册</legend>
+        <form name="RegForm" method="post" action="reg.php" onSubmit="return InputCheck(this)">
+<p>
+        <label for="username" class="label">用户名：</label>
+        <input id="username" name="username" type="text" calss="input"/>
+        <span>(必填，3-5字符长度，支持汉字、字母、数字以及-)</span>
+</p> 
+<p>
+        <label for="password" class="label">密码：</label>
+        <input id="password" name="password" type="text" calss="input"/>
+        <span>(必填，不得少于6位，支持字母、数字)</span>
+</p>
+<p>
+        <label for="email" class="label">电子邮箱：</label>
+        <input id="email" name="email" type="text" calss="input"/>
+        <span>(必填，请输入电子邮箱)</span>
+</p>
+<p>
+        <label for="phone" class="label">手机号码：</label>
+        <input id="phone" name="phone" type="text" calss="input"/>
+        <span>(必填，请输手机号码)</span>
+</p>
+<p>
+        <input type="submit" name="submit" value=" 确定 " class="left"/>
+</p>
+</form>
+</fieldest>
+</body>
+</html>
+
