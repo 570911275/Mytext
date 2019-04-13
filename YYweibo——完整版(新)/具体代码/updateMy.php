@@ -11,42 +11,7 @@ $sql ="SELECT * FROM `user_info` WHERE id ='$userid' limit 1";
 $query = mysqli_query($conn,$sql) or die('SQL执行失败');
 $result = mysqli_fetch_array($query);
 
-//判断是否提交数据
-if(!empty($_POST['submit']))
-{
-//接受数据
-$hid = $_POST['hid'];
-$username = $_POST['username'];
-$password = MD5($_POST['password']);
-$email = $_POST['email'];
 
-    //个人信息判断
-    if(!preg_match('^[\w\x80-\xff]{3,15}$^', $username)){
-     echo "<script>alert('用户名不规范');history.go(-1);</script>";
-    }
-    if(strlen($password) < 6){
-     echo "<script>alert('密码长度不符合规矩');history.go(-1);</script>";
-    }
-    if(!preg_match('^[a-zA-Z0-9_.]+@[a-zA-Z0-9_]+\.[a-zA-Z0-9.]+$^', $email)){
-     echo "<script>alert('电子邮箱格式错误');history.go(-1);</script>";
-    }
-
-         //判断是否已填写信息
-        if($username =='' || $password =='' || $email =='')
-        { 
-         echo '请填写完整个人信息';
-         exit;
-        }
-
-         //更新个人信息
-         $sql2 = "UPDATE `user_info` SET `username` = '$username',`password` = '$password',`email` = '$email' where id ='$hid'";
-         //执行并判断是否执行成功
-        if( mysqli_query($conn,$sql2) or die('SQL执行异常！'))
-        {
-         echo "<script>alert('微博个人信息修改成功');location.href='my.php';</script>";
-         exit;
-        }
-}
 ?>
 
 <html>
@@ -70,7 +35,7 @@ $email = $_POST['email'];
     background-attachment: fixed;"
     >
         <a href= "my.php">返回用户中心</a><br/>
-        <form action="updateMy.php" method="POST">
+        <form action="updateMy2.php" method="POST">
             <input type = "hidden" name = "hid" value = "<?php echo $result['id'] ?>">
             <p>
             用户名:<input type="text" name="username" value="<?php echo $result['username'] ?>" /><br/>
@@ -97,13 +62,13 @@ $email = $_POST['email'];
             家乡:  <input type="text" name="hometown" value="<?php echo $result['hometown'] ?>" /><br/>
             </p>
             <p>
-            兴趣爱好:  <textarea name="like" rows="10" colos="15" value="<?php echo $result['like'] ?>"  ></textarea><br/>
+            个性签名:  <input type="text" name="personality"  value="<?php echo $result['personality'] ?>  "><br/>
             </p>
             <p>
-            个性签名:  <textarea name="personality" rows="10" colos="15" value="<?php echo $result['personality'] ?>  "></textarea><br/>
+            个人说明:  <input type="text" name="detail" value="<?php echo $result['detail'] ?>  "><br/>
             </p>
             <p>
-            个人说明:  <textarea name="detail" rows="10" colos="15" value="<?php echo $result['detail'] ?>  "></textarea><br/>
+            兴趣爱好:  <input type="text" name="love" value="<?php echo $result['love'] ?>  "><br/>
             </p>
             <p>
             <input type="submit" name="submit" value="  修 改  " class="left" />
