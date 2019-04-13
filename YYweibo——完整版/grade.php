@@ -1,0 +1,29 @@
+<?php
+$exp=$_SESSION['exp'];
+if($exp=='')
+{
+    $grade="初出茅庐";
+}
+elseif($exp<10)
+{
+    $grade="崭露头角";
+}
+elseif($exp<100)
+{
+    $grade="略有名气";
+}
+elseif($exp<200)
+{
+    $grade="世人皆晓";
+}
+elseif($exp<400)
+{
+    $grade="如日中天";
+}
+elseif($exp<800)
+{
+    $grade="别升啦，你最高级啦";
+}
+?>
+
+

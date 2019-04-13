@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>留言私信</title>
+        <style type="text/css">
+          html{font-size:15px;}
+          fieldset{width:320px; margin:0 auto;}
+          legend{font-weight:bold; font-size:30px; margin:0 auto; color:rgb(118, 173, 199)}
+          .label{float:left; width:70px; margin-left:10px; color:turquoise}
+          .left{margin-left:80px;}
+          .input{width:150px;}
+          span{color: #70b9b0;}
+</style>
+    </head>
+    <body>
+        <a href= "index.php">返回微博中心</a><br/>
+        <form action="letter.php" method="POST">
+        <div>
+        <fieldset>
+            <p>
+            <label for="letterHead" class="label">留言标题:</label>
+            <input id="letterHead" name="letterHead" type="letterHead" class="input" />
+            </p>
+            <p>
+            <h3>留言内容:</h3>
+            </p>
+            <hr>
+            <p>
+            <td><textarea name="letterDetail" rows="15" colos="100"></textarea></td>
+            <span>留言字数不可超过200字</span>
+            </p>
+            <p>
+            <input type="submit" name="submit" value="  留 言  " class="left" />
+            <input type="RESET" value="  重 置  " class="right"/>
+            </p>
+        </form>
+        </fieldset>
+        </div>
+    </body>
+</html>
