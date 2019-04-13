@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>微博评论</title>
+<style type="text/css">
+    html{font-size:12px;}
+    fieldset{width:300px; margin: 0 auto;}
+    legend{font-weight:bold; font-size:14px;}
+    .label{float:left; width:70px; margin-left:10px;}
+    .left{margin-left:80px;}
+    .input{width:150px;}
+    span{color: #666666;}
+</style>
+<script language="JavaScript">
+    function InputCheck(WeiboComment)
+    {
+      if (WeiboComment.comment_content.value == "")
+        {
+           alert("请填写评论内容");
+           WeiboComment.password.focus();
+           return (false);
+           exit;
+        }
+    }    
+    </script>
+</head>
+<body
+background="背景图片5-皮卡丘帽子.jpg" 
+style=" background-repeat:no-repeat ;
+background-size:100% 100%; 
+background-attachment: fixed;"
+>
+<div>
+<fieldset>
+<form  name="WeiboComment" method="POST" action="comment备份.php" onSubmit="return InputCheck(this)" >
+        <legend>微博评论:</legend>
+        <hr>
+        <p>
+                <td><textarea name="comment_content" rows="20" colos="100"></textarea></td>
+        </p>
+        <hr>
+        <p>
+                <input type="submit" name="submit" value="  发 布  " class="left" />
+                <input type="RESET" value="  重 置  " class="right"/>
+        </p>
+</form>
+</fieldset>
+</div> 
+</body>
+</html>   
